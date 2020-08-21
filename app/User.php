@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function gifts()
+    {
+        return $this->belongsToMany('App\Gift','gift_user')->withPivot('gift_name', 'user_name')->withTimestamps();;
+    }
 }

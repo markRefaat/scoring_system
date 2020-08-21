@@ -12,6 +12,35 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+        <link rel="stylesheet" href="{{ asset('mdb/css/bootstrap.min.css')}}">
+        <!-- Material Design Bootstrap -->
+        <link rel="stylesheet" href="{{ asset('mdb/css/mdb.min.css')}} ">
+        <!-- Plugin file -->
+        <link rel="stylesheet" href="{{ asset('mdb/css/addons/datatables.min.css') }}">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
+        <!-- Your custom styles (optional) -->
+        <link rel="stylesheet" href="{{ asset('mdb/css/style.css') }}">
+        <!--Jquery -->
+        <script type="text/javascript" src="{{ asset('mdb/js/jquery.min.js') }}"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="{{ asset('mdb/js/popper.min.js') }}"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="{{ asset('mdb/js/bootstrap.min.js') }}"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="{{ asset('mdb/js/mdb.min.js') }}"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script>
+        <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/i18n/defaults-*.min.js"></script>
+        <!-- Plugin file -->
+        <script src="{{asset('mdb/js/addons/datatables.min.js')}}"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -49,6 +78,14 @@
                                 </li>
                             @endif
                         @else
+                         <li class="nav-item">
+                            <a class="nav-link" href="/store">أختر هدية</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/myGifts">الهدايا التى تم شرائها</a>
+                             </li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -66,6 +103,7 @@
                                     </form>
                                 </div>
                             </li>
+
                         @endguest
                     </ul>
                 </div>
