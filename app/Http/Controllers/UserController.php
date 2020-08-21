@@ -41,6 +41,8 @@ class UserController extends Controller
     public function returnGift($id) {
         $user=User::findOrFail(auth()->user()->id);
         $gift=Gift::findOrFail($id);
+        try{
+
         if($user->gifts->contains($id)){
             $count=$user->gifts()->where('gift_id',$id)->get()->count();
           if($count > 1){
@@ -59,5 +61,9 @@ class UserController extends Controller
         } else {
              return redirect()->back()->with('error', 'انت لاتملك هذه الهدية');
         }
+
+    } catch (ModelNotFoundException $e) {
+        return redirect()->back()->with('error', 'حدث خطأ برجاء اعدة المحاولة');
+    }
     }
 }

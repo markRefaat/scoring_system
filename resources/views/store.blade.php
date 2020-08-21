@@ -37,7 +37,7 @@
     <form action="/redeem" method="POST">
     @csrf
     <div class="text-center">
-        <h2 class="alert alert-warning">الهدايا التى يمكنك شرائها</h2>
+        <h2 class="alert alert-light">الهدايا التى يمكنك شرائها</h2>
         <select name="gift" required style="text-align: center" class="browser-default custom-select">
             <option disabled value="" selected>اختر هدية</option>
             @foreach ($gifts as $gift)
@@ -46,6 +46,11 @@
         </select>
       <input class="btn btn-success"onclick="return confirm('هل انت متأكد من شراء الهدية؟')" value="تأكيد الشراء" type="submit">
     </div>
-</div>
+    <br>
+    <div class="alert alert-warning" role="alert">
+        أستلام الهدايا من الكنيسة يوم الاحد 23/8 من الساعة 4 الى 8  امام مبنى الانبا ونس 
+        <br>
+        لمن لا يناسبه الموعد برجاء مراسلة فيلوباتير على الواتساب على الرقم 01203566808   
+      </div>
 </form>
     @endsection

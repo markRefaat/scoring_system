@@ -5,6 +5,17 @@
 
 @section('content')
 
+@if (session('error'))
+<div style="text-align: center" class="alert alert-danger" role="alert">
+  <strong>{{session('error')}}</strong>
+</div>
+@endif
+
+@if (session('status'))
+<div class="alert alert-success" role="alert">
+    {{ session('status') }}
+</div>
+@endif
 
   <div class="card-body">
       <h3 class="alert alert-info text-center">الهدايا التى تم شرائها</h3>
