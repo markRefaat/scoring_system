@@ -24,20 +24,22 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {   
-        $user=User::findOrFail(auth()->user()->id);
-        return view('home',compact('user'));
+    {
+        $user = User::findOrFail(auth()->user()->id);
+        return view('home', compact('user'));
     }
 
-    public function showStore(){
-        $user=User::findOrFail(auth()->user()->id);
-        $gifts=Gift::where('price','<=',$user->score)->get();
-        return view('store',compact('gifts','user'));
+    public function showStore()
+    {
+        $user = User::findOrFail(auth()->user()->id);
+        $gifts = Gift::where('price', '<=', $user->score)->orderBy('price', 'asc')->get();
+        return view('store', compact('gifts', 'user'));
     }
 
-    public function showMyGifts(){
-        $user=User::findOrFail(auth()->user()->id);
-        $gifts=Gift::where('price','<=',$user->score)->get();
-        return view('store',compact('gifts','user'));
+    public function showMyGifts()
+    {
+        $user = User::findOrFail(auth()->user()->id);
+        $gifts = Gift::where('price', '<=', $user->score)->get();
+        return view('store', compact('gifts', 'user'));
     }
 }
