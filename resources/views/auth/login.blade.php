@@ -8,8 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <div class="alert alert-info text-center">  سيتم السماح بالدخول الساعة 1:30 صباحا</div>
-                    {{-- <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -50,7 +49,7 @@
 
                             </div>
                         </div>
-                    </form> --}}
+                    </form>
                 </div>
             </div>
         </div>
