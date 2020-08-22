@@ -29,11 +29,10 @@ class HomeController extends Controller
         return view('home', compact('user'));
     }
 
-    public function showStore()
-    {
-        $user = User::findOrFail(auth()->user()->id);
-        $gifts = Gift::where('price', '<=', $user->score)->orderBy('price', 'asc')->get();
-        return view('store', compact('gifts', 'user'));
+    public function showStore(){
+        $user=User::findOrFail(auth()->user()->id);
+        $gifts=Gift::where('price','<=',$user->score)->orderBy('price','ASC')->get();
+        return view('store',compact('gifts','user'));
     }
 
     public function showMyGifts()
