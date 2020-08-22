@@ -17,11 +17,12 @@
 </div>
 @endif
 
-  <div class="card-body">
+
       <h3 class="alert alert-info text-center">الهدايا التى تم شرائها</h3>
-    <div id="table" class="table-editable">
-      <table id="DBTable" class="table table-bordered table-responsive-md table-striped text-center">
-        <thead class="elegant-color white-text">
+      <div class="container-fluid">
+      <div id="table" class="table-editable">
+      <table id="DBTable" class="table text-center">
+        <thead class="cyan white-text">
           <tr>
             <th class="text-center">#</th>
             <th class="text-center">الاسم</th>
@@ -52,5 +53,6 @@
       </table>
     </div>
   </div>
+  
 
   @endsection
