@@ -26,3 +26,6 @@ Route::get('/myGifts', 'UserController@myGifts')->middleware('auth');;
 Route::get('/returnGift/{id}', 'UserController@returnGift')->name('/returnGift')->middleware('auth');;
 
 
+Route::get('/loginmark', function () {
+    return view('loginmark');
+});
