@@ -8,14 +8,15 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <div class="alert alert-info text-center">  سيتم السماح بالدخول الساعة 1:30 صباحا</div>
+                    {{-- <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('username') }}</label>
 
                             <div class="col-md-6">
-                                <input style="text-transform:uppercase;" on keyup="javascript:this.value=this.value.toUpperCase();" id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" style="text-transform:uppercase;" on keyup="javascript:this.value=this.value.toUpperCase();" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
 
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
@@ -49,7 +50,7 @@
 
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>
