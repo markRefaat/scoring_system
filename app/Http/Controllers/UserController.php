@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    
+       public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function redeem(Request $request)
     {   
         $user=User::findOrFail(auth()->user()->id);
