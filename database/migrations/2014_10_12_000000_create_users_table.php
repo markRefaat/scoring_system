@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('username');
             // $table->string('username')->unique();
             $table->integer('score');
+            $table->integer('staticScore');
             $table->string('email')->nullable();
             // $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
