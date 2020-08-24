@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/score', function () {
+//     $users = User::whereHas('gifts')->with('gifts')->get();
+//     return view('score', compact('users'));
+// });
 
 Auth::routes(['register' => false]);
 
