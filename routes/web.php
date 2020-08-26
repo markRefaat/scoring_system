@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// GET SCORE CSV
 // Route::get('/score', function () {
 //     $users = User::whereHas('gifts')->with('gifts')->get();
 //     return view('score', compact('users'));
@@ -25,12 +26,14 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
-// Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-// Route::get('/store', 'HomeController@showStore')->middleware('auth');;
-// Route::post('/redeem', 'UserController@redeem')->middleware('auth');;
-// Route::get('/myGifts', 'UserController@myGifts')->middleware('auth');;
-// Route::get('/returnGift/{id}', 'UserController@returnGift')->name('/returnGift')->middleware('auth');;
 
+// COMMENT THIS TO CLOSE THE WEBSITE
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/store', 'HomeController@showStore')->middleware('auth');;
+Route::post('/redeem', 'UserController@redeem')->middleware('auth');;
+Route::get('/myGifts', 'UserController@myGifts')->middleware('auth');;
+Route::get('/returnGift/{id}', 'UserController@returnGift')->name('/returnGift')->middleware('auth');;
+// 
 
 Route::get('/loginmark', function () {
     return view('loginmark');
