@@ -17,9 +17,15 @@
                     {{ __('Your score') }}
                     <div class="alert alert-success">{{$user->score}}</div>
                 </div>
+                @if ($user->score >= 250)
                 <div class="card-footer">
                     <a class="btn btn-primary" href="/store">Choose Gift</a>
                 </div>
+                @else
+                <div class="card-footer">
+                    <div class="btn btn-primary">ليس لديك نقاط كافية - الحد الادني 250 نقطة</div>
+                </div>
+                @endif
             </div>
         </div>
     </div>

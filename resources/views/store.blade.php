@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@if ($user->score >= 250)
 @if (session('error'))
 <div style="text-align: center" class="alert alert-danger" role="alert">
     <strong>{{session('error')}}</strong>
@@ -68,4 +69,5 @@
     });
 
 </script>
+@endif
 @endsection
