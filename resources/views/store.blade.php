@@ -63,7 +63,7 @@
 <script>
     $('#gift').on('change', function () {
         var selectVal = $("#gift option:selected").val();
-        $("#image").attr("src", 'images/' + selectVal + '.jpeg');
+        $("#image").attr("src", 'images/' + selectVal + '.jpg');
         $("#image").attr("width", '300px');
         $("#image").attr("height", '300px');
     });
