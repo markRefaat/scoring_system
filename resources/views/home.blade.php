@@ -17,7 +17,7 @@
                     {{ __('Your score') }}
                     <div class="alert alert-success">{{$user->score}}</div>
                 </div>
-                @if ($user->score >= 250)
+                @if ($user->staticScore >= 250)
                 <div class="card-footer">
                     <a class="btn btn-primary" href="/store">Choose Gift</a>
                 </div>

@@ -87,7 +87,7 @@
                         </li>
                         @endif
                         @else
-                        @if (Auth::user()->score >=250)
+                        @if (Auth::user()->staticScore >=250)
                         <li class="nav-item">
                             <a class="nav-link" href="/store">أختر هدية</a>
                         </li>
