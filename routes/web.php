@@ -28,11 +28,11 @@ Auth::routes(['register' => false]);
 
 
 // COMMENT THIS TO CLOSE THE WEBSITE
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-Route::get('/store', 'HomeController@showStore')->middleware('auth');;
-Route::post('/redeem', 'UserController@redeem')->middleware('auth');;
-Route::get('/myGifts', 'UserController@myGifts')->middleware('auth');;
-Route::get('/returnGift/{id}', 'UserController@returnGift')->name('/returnGift')->middleware('auth');;
+// Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+// Route::get('/store', 'HomeController@showStore')->middleware('auth');;
+// Route::post('/redeem', 'UserController@redeem')->middleware('auth');;
+// Route::get('/myGifts', 'UserController@myGifts')->middleware('auth');;
+// Route::get('/returnGift/{id}', 'UserController@returnGift')->name('/returnGift')->middleware('auth');;
 // 
 
 Route::get('/loginmark', function () {
