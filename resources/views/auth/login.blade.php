@@ -9,9 +9,9 @@
 
                 <div class="card-body">
 
-                    <div class="alert alert-info text-center">
+                    {{-- <div class="alert alert-info text-center">
                         <b>سوف يتم فتح تسجيل الهدايا يوم السبت بعد انتهاء المؤتمر</b>
-                    </div> 
+                    </div>  --}}
 
                    {{--  <div class="alert alert-info text-center"><b>تم انتهاء موعد حجز الهدايا</b></div> --}}
                     <div class="alert alert-warning text-center" role="alert">
