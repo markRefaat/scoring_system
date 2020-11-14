@@ -14,11 +14,6 @@
                     </div>  --}}
 
                     <div class="alert alert-info text-center"><b>تم انتهاء موعد حجز الهدايا</b></div>
-                    <div class="alert alert-warning text-center" role="alert">
-                         أستلام الهدايا من الكنيسة امام باب الحضانة يوم الاحد 6/9 من الساعة 5 الى 9
-                        <br>
-                        لمن لا يناسبه الموعد برجاء مراسلة فيلوباتير على الواتساب على الرقم 01203566808
-                    </div> 
 
 
                     {{-- <form method="POST" action="{{ route('login') }}">
