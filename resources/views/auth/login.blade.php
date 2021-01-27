@@ -13,10 +13,10 @@
                         <b>سوف يتم فتح تسجيل الهدايا يوم السبت بعد انتهاء المؤتمر</b>
                     </div>  --}}
 
-                    <div class="alert alert-info text-center"><b>تم انتهاء موعد حجز الهدايا</b></div>
+                    {{-- <div class="alert alert-info text-center"><b>تم انتهاء موعد حجز الهدايا</b></div> --}}
 
 
-                    {{-- <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}">
                     @csrf
 
                     <div class="form-group row">
@@ -63,10 +63,11 @@
 
                         </div>
                     </div>
-                    </form> --}}
+                    </form>
                 </div>
             </div>
         </div>
+        <img width="50%" src="gift1.svg" alt="My SVG Icon">
     </div>
 </div>
 @endsection
