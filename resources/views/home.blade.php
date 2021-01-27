@@ -28,6 +28,11 @@
                 
                 
                 @if ($user->staticScore >= 200)
+            </div>
+            </div>
+            </div>
+            </div>
+            <br>
                 <div  class="container text-center">
                     <h2 class="alert alert-info" > الفئات</h2>
                 <div class="row justify-content-around">
