@@ -1,96 +1,77 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
-        <title>مؤتمر الخدمة العام</title>
+@extends('layouts.app')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+                <div class="card-body">
 
-            .full-height {
-                height: 100vh;
-            }
+                    {{-- <div class="alert alert-info text-center">
+                        <b>سوف يتم فتح تسجيل الهدايا يوم السبت بعد انتهاء المؤتمر</b>
+                    </div>  --}}
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+                    {{-- <div class="alert alert-info text-center"><b>تم انتهاء موعد حجز الهدايا</b></div>
+                    <div class="alert alert-warning text-center" role="alert">
+                        لمن لا يناسبه الموعد برجاء مراسلة فيلوباتير على الواتساب على الرقم 01203566808
+                        او كريم ميلاد 01276777445
+                    </div>  --}}
 
-            .position-ref {
-                position: relative;
-            }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+                     <form method="POST" action="{{ route('login') }}">
+                    @csrf
 
-            .content {
-                text-align: center;
-            }
+                    <div class="form-group row">
+                        <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('username') }}</label>
 
-            .title {
-                font-size: 84px;
-            }
+                        <div class="col-md-6">
+                            <input id="username" type="text"
+                                class="form-control @error('username') is-invalid @enderror"
+                                style="text-transform:uppercase;" on
+                                keyup="javascript:this.value=this.value.toUpperCase();" name="username"
+                                value="{{ old('username') }}" required autocomplete="username" autofocus>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+                            @error('username')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+                    <div class="form-group row">
+                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+                        <div class="col-md-6">
+                            <input id="password" type="password"
+                                class="form-control @error('password') is-invalid @enderror" name="password" required
+                                autocomplete="current-password">
 
-            <div class="content">
-                <div class="title m-b-md">
-                  مؤتمر الخدمة العام شتاء 2021 
-                <br>
-                @auth
-                  <a class="btn btn-primary" href="{{ url('/home') }}">Home</a>
-                @else
-                  <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
-                  @endauth
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group row mb-0">
+                        <div class="col-md-8 offset-md-4">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('Login') }}
+                            </button>
+
+                        </div>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <img width="50%" src="gift1.svg" alt="My SVG Icon">
+    </div>
+</div>
+@endsection
