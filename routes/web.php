@@ -27,7 +27,7 @@ Route::get('/score', function () {
 Auth::routes(['register' => false]);
 
 
-COMMENT THIS TO CLOSE THE WEBSITE
+//COMMENT THIS TO CLOSE THE WEBSITE
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/store', 'HomeController@showStore')->middleware('auth');
 Route::get('/products/{name}', 'HomeController@showProducts')->middleware('auth');
