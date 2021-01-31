@@ -19,10 +19,10 @@ Route::get('/', function () {
 });
 
 // GET SCORE CSV
-// Route::get('/score', function () {
-//     $users = User::whereHas('gifts')->with('gifts')->get();
-//     return view('score', compact('users'));
-// });
+Route::get('/score', function () {
+    $users = User::whereHas('gifts')->with('gifts')->get();
+    return view('score', compact('users'));
+});
 
 Auth::routes(['register' => false]);
 
