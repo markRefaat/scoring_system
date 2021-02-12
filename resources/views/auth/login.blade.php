@@ -19,7 +19,7 @@
                         او كريم ميلاد 01276777445
                     </div> --}}
 
-<!-- 
+
                      <form method="POST" action="{{ route('login') }}">
                     @csrf
 
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     </form>
-                     -->
+                    
                 </div>
             </div>
         </div>
