@@ -27,7 +27,7 @@
                 
                 
                 
-                @if ($user->staticScore >= 200)
+                @if ($user->staticScore >= 30)
             </div>
             </div>
             </div>
@@ -39,19 +39,19 @@
                     <div onclick="location.href='/products/chocolates'" class="card" style="width: 18rem; margin-bottom: 2%">
                         <img class="card-img-top" src="/categories/chocolates.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <p class="card-text">شيكولاتات</p>
+                          <p class="card-text">chocolates</p>
                         </div>
                       </div>
-                      <div class="card" onclick="location.href='/products/home-appliances'" style="width: 18rem; margin-bottom: 2%">
-                        <img class="card-img-top" height="80%" src="/categories/home4.jpeg" alt="Card image cap">
+                      <div class="card" onclick="location.href='/products/mobile'" style="width: 18rem; margin-bottom: 2%">
+                        <img class="card-img-top" height="80%" src="/categories/category3.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <p class="card-text">ادوات منزلية و قسائم شراء</p>
+                          <p class="card-text">Mobile accessories & speakers</p>
                         </div>
                       </div>
                       <div class="card" onclick="location.href='/products/electronics'" style="width: 18rem; margin-bottom: 2%">
                         <img class="card-img-top" src="/categories/electronics.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <p class="card-text">اليكترونيات</p>
+                          <p class="card-text">Computer & bags</p>
                         </div>
                    
                       </div>
@@ -60,7 +60,7 @@
                 </div>
                 @else
                 <div class="card-footer">
-                    <div class="btn btn-primary">ليس لديك نقاط كافية - الحد الادني 200 نقطة</div>
+                    <div class="btn btn-primary">ليس لديك نقاط كافية - الحد الادني 30 نقطة</div>
                     <br><img width="50%" src="/empty.svg" alt="My SVG Icon">
                 </div>
                 @endif

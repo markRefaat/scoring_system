@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if ($user->staticScore >= 200)
+    @if ($user->staticScore >= 30)
         @if (session('error'))
             <div style="text-align: center" class="alert alert-danger" role="alert">
                 <strong>{{ session('error') }}</strong>
@@ -45,7 +45,7 @@
                         aria-selected="false">Chocolates</a>
                 </li>
                 <li class="nav-item" style="padding: 1%" role="presentation">
-                    <a class="nav-link active cyan" data-mdb-toggle="pill" href="/products/home-appliances" role="tab"
+                    <a class="nav-link active cyan" data-mdb-toggle="pill" href="/products/mobile" role="tab"
                         aria-selected="false">Home appliances and vouchers</a>
                 </li>
                 <li class="nav-item" style="padding: 1%" role="presentation">
@@ -61,7 +61,7 @@
 
                 @forelse ($gifts as $gift)
                     <div class="card" style="width: 18rem; margin-top: 1%">
-                        <img class="card-img-top" src="/images/{{ $gift->id }}.jpg" alt="Card image cap">
+                        <img class="card-img-top" style="max-height: 250px" src="/images/{{ $gift->id }}.jpg" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">{{ $gift->name }}</p>
                             <h3 style="color: lime">{{ $gift->price }}</h3>

@@ -37,12 +37,12 @@ class HomeController extends Controller
 
     public function showProducts($category){
         $user=User::findOrFail(auth()->user()->id);
-        if($category == 'home-appliances')
-        $category = 'home';
+        if($category == 'mobile')
+        $category = 'Mobile accessories and speakers';
         else if($category == 'electronics')
-        $category='electronics';
+        $category='Computer and bags';
         else if ($category == 'chocolates')
-        $category = 'chocolates';
+        $category = 'Chocolates';
         else  return redirect('home')->with('error', 'حدث خطأ ما');
         $gifts=Gift::where('price','<=',$user->score)->where('category','=' ,$category)->get();
         return view('store',compact('gifts','user'));

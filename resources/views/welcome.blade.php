@@ -82,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                  مؤتمر الخدمة العام شتاء 2021 
+                  مؤتمر محبة شتاء 2021 
                 <br>
                 @auth
                   <a class="btn btn-primary" href="{{ url('/home') }}">Home</a>
