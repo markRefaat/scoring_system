@@ -46,11 +46,11 @@
                 </li>
                 <li class="nav-item" style="padding: 1%" role="presentation">
                     <a class="nav-link active cyan" data-mdb-toggle="pill" href="/products/mobile" role="tab"
-                        aria-selected="false">Home appliances and vouchers</a>
+                        aria-selected="false">Mobile accessories & speakers</a>
                 </li>
                 <li class="nav-item" style="padding: 1%" role="presentation">
                     <a class="nav-link active" id="ex2-tab-3" data-mdb-toggle="pill" href="/products/electronics" role="tab"
-                        aria-selected="false">Electronics</a>
+                        aria-selected="false">Computer & Bags</a>
                 </li>
 
             </ul>
