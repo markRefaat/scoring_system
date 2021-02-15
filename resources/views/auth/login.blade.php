@@ -13,14 +13,15 @@
                         <b>سوف يتم فتح تسجيل الهدايا يوم السبت بعد انتهاء المؤتمر</b>
                     </div>  --}}
 
-                    {{-- <div class="alert alert-info text-center"><b>تم انتهاء موعد حجز الهدايا</b></div>
-                    <div class="alert alert-warning text-center" role="alert">
+                 <div class="alert alert-info text-center"><b>تم انتهاء موعد حجز الهدايا</b></div>
+                  
+                 {{--<div class="alert alert-warning text-center" role="alert">
                         لمن لا يناسبه الموعد برجاء مراسلة فيلوباتير على الواتساب على الرقم 01203566808
                         او كريم ميلاد 01276777445
                     </div>  --}}
 
 
-                     <form method="POST" action="{{ route('login') }}">
+                     {{-- <form method="POST" action="{{ route('login') }}">
                     @csrf
 
                     <div class="form-group row">
@@ -67,7 +68,7 @@
 
                         </div>
                     </div>
-                    </form>
+                    </form> --}}
                     
                 </div>
             </div>
