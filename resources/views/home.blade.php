@@ -48,39 +48,39 @@
     <div class="container text-center">
         <h2 class="alert alert-info"> Categories</h2>
         <div class="row justify-content-around">
-            <div class="col-lg-3 mol-md-12">
-                <div style="width: 99%" onclick="location.href='/products/chocolates'" class="card"
+            <div class="col-lg-3 mol-md-10">
+                <div style="width: 99% margin-top:2%" onclick="location.href='/products/chocolates'" class="card"
                     style="width: 18rem; margin-bottom: 2%">
-                    <img class="card-img-top" src="/categories/chocolates.jpg" alt="Card image cap">
+                    <img class="card-img-top" height="200px" src="/categories/chocolates.jpg" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text">chocolates</p>
                     </div>
                 </div>
 
             </div>
-            <div class="col-lg-3 mol-md-12">
-                <div style="width: 99%" class="card" onclick="location.href='/products/games'"
+            <div class="col-lg-3 mol-md-10">
+                <div style="width: 99%; margin-top:2%" class="card" onclick="location.href='/products/games'"
                     style="width: 18rem; margin-bottom: 2%">
-                    <img class="card-img-top" height="250px" src="/categories/games.jpg" alt="Card image cap">
+                    <img class="card-img-top" height="200px" src="/categories/games.jpg" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text">Games</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 mol-md-12">
-                <div style="width: 99%" class="card" onclick="location.href='/products/electronics'"
+            <div class="col-lg-3 mol-md-10">
+                <div style="width: 99%; margin-top:2%" class="card" onclick="location.href='/products/electronics'"
                     style="width: 18rem; margin-bottom: 2%">
-                    <img class="card-img-top" height="250px" src="/categories/electronics.jpg" alt="Card image cap">
+                    <img class="card-img-top" height="200px" src="/categories/electronics.jpg" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text">Electronics and accessories</p>
                     </div>
 
                 </div>
             </div>
-            <div class="col-lg-3 mol-md-12">
-                <div style="width: 99%" class="card" onclick="location.href='/products/sports'"
+            <div class="col-lg-3 mol-md-10">
+                <div style="width: 99%; margin-top:2%" class="card" onclick="location.href='/products/sports'"
                     style="width: 18rem; margin-bottom: 2%">
-                    <img class="card-img-top" height="250px" src="/categories/sports.jpg" alt="Card image cap">
+                    <img class="card-img-top" height="200px" src="/categories/sports.jpg" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text">Sports</p>
                     </div>
