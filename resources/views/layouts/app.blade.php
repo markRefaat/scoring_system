@@ -87,7 +87,6 @@
                         </li>
                         @endif
                         @else
-                        @if (Auth::user()->staticScore >=200)
                         <li class="nav-item">
                             <a class="nav-link" href="/store">جميع الهدايا</a>
                         </li>
@@ -98,7 +97,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/myGifts">الهدايا التى تم شرائها</a>
                         </li>
-                        @endif
+                      
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

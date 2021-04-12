@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -41,5 +42,14 @@ class LoginController extends Controller
     public function username()
     {
         return 'username';
+    }
+
+    public function authenticated(Request $request, $user) {
+        if($user->visited_at == null){
+            $user->staticScore +=50;
+            $user->score+=50; 
+        }
+        $user->visited_at = Carbon::now()->toDateTimeString();
+        $user->save();
     }
 }

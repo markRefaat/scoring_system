@@ -12,7 +12,7 @@
 @endif
 
 @if (session('status'))
-<div class="alert alert-success" role="alert">
+<div style="text-align: center" class="alert alert-success" role="alert">
     {{ session('status') }}
 </div>
 @endif
@@ -35,13 +35,16 @@
           @php($i=1)
           @forelse ($gifts as $gift)
           <tr>
-            <th class="pt-3-half">{{$i}}</th>
-            <td class="pt-3-half">{{$gift->name}}</td>
-            <td class="pt-3-half">{{$gift->price}}</td>
-            <td class="pt-3-half">
-       
-            <a href="{{route('/returnGift',$gift->id)}}" onclick="return confirm('تاكيد ارجاع الهدية ؟');" class="btn btn-danger btn-rounded btn-sm my-0"
+            <th style="width: 10%" class="pt-3-half">{{$i}}</th>
+            <td style="width: 20%" class="pt-3-half">{{$gift->name}}</td>
+            <td style="width: 20%" class="pt-3-half">{{$gift->price}}</td>
+            <td style="width: 50%" class="pt-3-half">
+              @if ($returnGifts->value == 'true')
+              <a href="{{route('/returnGift',$gift->id)}}" onclick="return confirm('تاكيد ارجاع الهدية ؟');" class="btn btn-danger btn-rounded btn-sm my-0"
                 >أرجاع</a>
+              @else
+              <div class="alert alert-warning">لا يمكنك ارجاع الهدية الان <hr> You are not allowed to return the gift</div>
+              @endif
             
             </td>
             @php($i++)

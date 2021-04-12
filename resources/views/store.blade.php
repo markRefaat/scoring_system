@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if ($user->staticScore >= 30)
+  
         @if (session('error'))
             <div style="text-align: center" class="alert alert-danger" role="alert">
                 <strong>{{ session('error') }}</strong>
@@ -45,18 +45,18 @@
                         aria-selected="false">Chocolates</a>
                 </li>
                 <li class="nav-item" style="padding: 1%" role="presentation">
-                    <a class="nav-link active cyan" data-mdb-toggle="pill" href="/products/mobile" role="tab"
-                        aria-selected="false">Mobile accessories & speakers</a>
+                    <a class="nav-link active cyan" data-mdb-toggle="pill" href="/products/games" role="tab"
+                        aria-selected="false">Games and toys</a>
                 </li>
                 <li class="nav-item" style="padding: 1%" role="presentation">
                     <a class="nav-link active" id="ex2-tab-3" data-mdb-toggle="pill" href="/products/electronics" role="tab"
-                        aria-selected="false">Computer & Bags</a>
+                        aria-selected="false">Electronics</a>
                 </li>
 
             </ul>
         </div>
         <div class="container text-center">
-            <h2 class="alert alert-info"> الهدايا</h2>
+            <h2 class="alert alert-info"> Gifts</h2>
             <div class="row justify-content-around">
 
                 @forelse ($gifts as $gift)
@@ -69,12 +69,13 @@
                         <div class="modal-footer">
                             <button type="button"
                                 onclick="buygift({{ $gift->id }},'{{ $gift->name }}','{{ $gift->description }}')"
-                                style="font-size: 18px;" class="btn btn-primary btn-block">عرض</button>
+                                class="btn btn-primary btn-block">view</button>
                         </div>
                     </div>
                 @empty
                     <div class="container">
-                        <div class="alert alert-warning">لا يوجد نقاط كافية</div>
+                        <div class="alert alert-warning">No gifts available to show</div>
+                        <div class="alert alert-warning">لا يوحد هدايا متوفرة</div>
                         <img width="40%" src="/sorry.svg" alt="My SVG Icon">
                         <br>
                         <br>
@@ -86,48 +87,14 @@
 
 
 
-    {{-- <div class="container-fluid text-center">
-        <form action="/redeem" method="POST">
-            @csrf
-            <div class="text-center">
-                <h2 class="alert alert-light">الهدايا التى يمكنك شرائها</h2>
-                <select id="gift" name="gift" required style="text-align: center" class="browser-default custom-select">
-                    <option disabled value="" selected>اختر هدية</option>
-                    @foreach ($gifts as $gift)
-                        <option value="{{ $gift->id }}">{{ $gift->name }} || pirce {{ $gift->price }} points</option>
-                    @endforeach
-                </select>
-                <br>
-                <br>
-                <img id="image" src="" alt="" class="d-block mx-auto">
-                <input class="btn btn-success" onclick="return confirm('هل انت متأكد من شراء الهدية؟')" value="تأكيد الشراء"
-                    type="submit">
-            </div>
-            <br>
-            <div class="alert alert-warning" role="alert">
-                أستلام الهدايا من الكنيسة يوم الاحد 6/9 من الساعة 5 الى 9 امام باب الحضانة
-                <br>
-                لمن لا يناسبه الموعد برجاء مراسلة فيلوباتير على الواتساب على الرقم 01203566808
-            </div>
-        </form>
-    </div>
 
-    <script>
-        $('#gift').on('change', function() {
-            var selectVal = $("#gift option:selected").val();
-            $("#image").attr("src", 'images/' + selectVal + '.jpg');
-            $("#image").attr("width", '300px');
-            $("#image").attr("height", '300px');
-        });
-
-    </script> --}}
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">التفاصيل</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Description</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -140,16 +107,28 @@
                         <input type="hidden" name="gift" id="formgift">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                    @if ($buyGifts->value=='true')
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
                     <button type="submit" onclick="return confirm('هل انت متأكد من شراء الهدية؟')"
-                        class="btn btn-primary">ِشراء</button>
+                    class="btn btn-primary">Buy</button>
+                    @else
+                    <div class="col text-center">
+                        <div class="alert alert-info">
+                            Redeeming Gifts is currently unavailable
+                            <hr>
+                            شراء الهدايا غير متوفر حاليا
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                    </div>
+               
+                    @endif
+               
                 </div>
                 </form>
             </div>
         </div>
     </div>
 
-    @endif
 
     <script>
         function buygift(id, title, desc) {
