@@ -40,7 +40,7 @@
         <h4 class="alert-heading">Welcome to Mr.clock's gift store!</h4>
         <p>hello {{$user->name}} welcome, because you logged in for the first time mr.clock has given you a <span style="font-size: 30px; font-weight: bold">  50  </span> momento bonus &#128516; &#129321; &#129321; !! Now check the gifts categories below and find what you like.</p>
         <hr>
-        <p class="mb-0">اهلا يا {{$user->name}} علشان انت دخلت الويب سايت مستر كلوك مديلك هدية <span style="font-size: 30px; font-weight: bold">  50  </span>   .موميتو بونص &#128516; &#129321; &#129321; يلا انزل تحت واتفرج على الهدايا وشوف ايه اللى عجبك  </p>
+        <p class="mb-0">اهلا يا {{$user->name}} علشان انت دخلت الويب سايت مستر كلوك مديلك هدية <span style="font-size: 30px; font-weight: bold">  50  </span>   .مومينتو بونص &#128516; &#129321; &#129321; يلا انزل تحت واتفرج على الهدايا وشوف ايه اللى عجبك  </p>
       </div>
     </div>
     @endif

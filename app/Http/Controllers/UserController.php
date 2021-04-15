@@ -18,7 +18,7 @@ class UserController extends Controller
     public function redeem(Request $request)
     {
         $user=User::findOrFail(auth()->user()->id);
-        $buyGifts=Settings::where('setting','=','buygift')->first('value');
+        $buyGifts=Settings::where('setting','=','buygift')->first(['value','setting']);
         if($buyGifts->value == 'true'){
             $request->validate([
                 'gift'=>'required|exists:gifts,id'
@@ -45,7 +45,7 @@ class UserController extends Controller
     }
 
     public function myGifts()
-    {   $returnGifts=Settings::where('setting','=','returngift')->first('value');
+    {   $returnGifts=Settings::where('setting','=','returngift')->first(['value','setting']);
         $user=User::findOrFail(auth()->user()->id);
         $gifts=$user->gifts()->get();
         return view('myGifts',compact('gifts','returnGifts'));

@@ -32,6 +32,9 @@ Route::get('/products/{name}', 'HomeController@showProducts')->middleware('auth'
 Route::get('/products', 'HomeController@index')->middleware('auth');
 Route::post('/redeem', 'UserController@redeem')->middleware('auth');
 Route::get('/myGifts', 'UserController@myGifts')->middleware('auth');
+Route::get('/adminHome', 'AdminController@index')->name('adminhome')->middleware(['auth','admin']);
+Route::get('/updateScore', 'AdminController@updateScore')->middleware(['auth','admin']);
+Route::get('/updateSettings', 'AdminController@updateSettings')->middleware(['auth','admin']);
 Route::get('/returnGift/{id}', 'UserController@returnGift')->name('/returnGift')->middleware('auth');
 
 // Route::get('/loginmark', function () {

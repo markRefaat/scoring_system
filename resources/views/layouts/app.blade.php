@@ -97,6 +97,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/myGifts">الهدايا التى تم شرائها</a>
                         </li>
+
+                        @if (auth()->user()->class == 'admins')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('adminhome')}}">Settings</a>
+                        </li>
+                        @endif
                       
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
