@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGiftUserTable extends Migration
+class CreateReturnHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateGiftUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('gift_user', function (Blueprint $table) {
+        Schema::create('return_histories', function (Blueprint $table) {
             $table->id();
-            $table->string('user_name');
-            $table->string('gift_name');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('gift_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
@@ -32,6 +30,6 @@ class CreateGiftUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gift_user');
+        Schema::dropIfExists('return_histories');
     }
 }

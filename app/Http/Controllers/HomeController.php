@@ -35,13 +35,13 @@ class HomeController extends Controller
 
     public function showStore(){
         $buyGifts=Settings::where('setting','=','buygift')->first('value');
-        $user=User::where('id','=',auth()->user()->id)->select(['name','score'])->first();
+        $user=User::where('id','=',auth()->user()->id)->select(['name','score','staticScore'])->first();
         $gifts=Gift::orderBy('price','ASC')->get();
         return view('store',compact('gifts','user','buyGifts'));
     }
 
     public function showProducts($category){
-        $user=User::where('id','=',auth()->user()->id)->select(['name','score'])->first();
+        $user=User::where('id','=',auth()->user()->id)->select(['name','score','staticScore'])->first();
         $buyGifts=Settings::where('setting','=','buygift')->first('value');
         if($category == 'games')
         $category = 'games';

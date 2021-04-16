@@ -67,9 +67,23 @@
                             <h3 style="color: lime">{{ $gift->price }}</h3>
                         </div>
                         <div class="modal-footer">
+                            @if($gift->quantity > 0)
+                            
+                            @if($gift->quantity < 10)
+                            <span class="badge badge-info">Limited Quantity</span>
+                            @endif
                             <button type="button"
-                                onclick="buygift({{ $gift->id }},'{{ $gift->name }}','{{ $gift->description }}')"
+                                onclick="buygift({{ $gift->id }},'{{ $gift->name }}','{{ $gift->description }}','{{$gift->quantity}}')"
                                 class="btn btn-primary btn-block">view</button>
+                            @else
+                            <div class="col text-center">
+                                <div class="alert alert-info">
+                                    sold out
+                                    <hr>
+                                    تم نفاذ الكمية 
+                                </div>
+                            </div>
+                            @endif
                         </div>
                     </div>
                 @empty
@@ -108,9 +122,27 @@
                 </div>
                 <div class="modal-footer">
                     @if ($buyGifts->value=='true')
+                   
+                    @if ($user->staticScore >= 1000)
+                    
+                  
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
                     <button type="submit" onclick="return confirm('هل انت متأكد من شراء الهدية؟')"
                     class="btn btn-primary">Buy</button>
+                   
+                 
+                    @else
+                    <div class="col text-center">
+                        <div class="alert alert-info">
+                            Minimum score for buying is 1000 momentos
+                            <hr>
+                            الحد الادنى 1000 مومينتو لشراء الهدايا 
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                    </div>
+                    @endif
+
+                    
                     @else
                     <div class="col text-center">
                         <div class="alert alert-info">
@@ -131,7 +163,7 @@
 
 
     <script>
-        function buygift(id, title, desc) {
+        function buygift(id, title, desc,quantity) {
             document.getElementById("productimage").src = "/images/" + id + ".jpg";
             document.getElementById("producttitle").innerHTML = title;
             document.getElementById("productdesc").innerHTML = desc;

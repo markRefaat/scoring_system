@@ -16,8 +16,13 @@
     {{ session('status') }}
 </div>
 @endif
+@if (session('error'))
+<div class="alert alert-danger text-center" role="alert">
+    {{ session('error') }}
+</div>
+@endif
     <div class="container text-center">
-        <form action="/updateSettings">
+        <form action="/updateSettings" method="POST">
             <h3 class="alert alert-info" style="margin: 2%">Update users access</h3>
             @foreach ($settings as $setting)
                 <div class="row">
@@ -57,7 +62,7 @@
         <h6 style= "font-weight:bold" class="text-warning">
             please use with caution.
         </h6>
-        <form action="/updateScore">
+        <form method="POST" action="/updateScore" enctype="multipart/form-data">
         @csrf
         <div class="custom-file">
             <input type="file" name="sheet" class="custom-file-input" id="validatedCustomFile" required>
@@ -67,7 +72,7 @@
           <h6  style="margin: 2%">Authentication</h6>
           <input style="width:50%; margin:auto" type="password" class="form-control" required name="password">
           <hr>
-          <input type="button" disabled value="Update Score" class="btn btn-warning">
+          <input type="submit" value="Update Score" class="btn btn-warning">
 
         </form>
     </div>
