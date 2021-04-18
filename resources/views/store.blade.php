@@ -7,26 +7,33 @@
                 <strong>{{ session('error') }}</strong>
             </div>
         @endif
-
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
 
 
         <div class="container">
             <div class="row justify-content-center">
-
                 <div class="col-md-8">
                     <div class="card text-center">
-                        <div class="card-header">{{ __('Welcome') }} {{ $user->name }}</div>
-
-                        <div class="card-body">
-                            @if (session('status'))
-                                <div class="alert alert-success" role="alert">
-                                    {{ session('status') }}
-                                </div>
-                            @endif
-
-                            {{ __('Your score') }}
-                            <h3 class="alert alert-info">{{ $user->score }}</h3>
+                        <div class="card-header">{{ __('Welcome') }} {{ $user->name }}
                         </div>
+                        <div class="card-body">
+                            {{ $rankData['rank'] }}
+                            <br>
+                            {{ __('Your score') }}
+                            <div class="alert alert-success">{{ $user->score }}</div>
+                            <br>
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{$user->staticScore}}" aria-valuemin="0" aria-valuemax="{{$user->staticScore+$rankData['points_to_next']}}" style="width:{{$user->staticScore / ($user->staticScore+$rankData['points_to_next'])*100}}%"></div>
+                            </div>
+                            {{$rankData['points_to_next']}} remaining for rank {{$rankData['next_rank']}}
+                        </div>
+    
+    
+    
                     </div>
                 </div>
             </div>
@@ -61,22 +68,53 @@
 
                 @forelse ($gifts as $gift)
                     <div class="card" style="width: 18rem; margin-top: 1%">
-                        <img class="card-img-top" style="max-height: 250px" src="/images/{{ $gift->id }}.jpg" alt="Card image cap">
+                        <img class="card-img-top" style="height: 170px" src="/images/{{ $gift->id }}.jpg" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">{{ $gift->name }}</p>
+                            @if($buyGifts->value == "true" && $gift->price < $rankData['current_rank_max'])
                             <h3 style="color: lime">{{ $gift->price }}</h3>
+                            @endif
                         </div>
                         <div class="modal-footer">
+
+                            @if($gift->price < $rankData['ranks_start'][0])
+                            🥉<span style="background-color: rgb(185, 123, 8); color: rgb(185, 123, 8)" class="badge badge-bronze">Bronze</span>
+                            @endif
+                            
+                            @if($gift->price >= $rankData['ranks_start'][0] && $gift->price < $rankData['ranks_start'][1])
+                            🥈<span style="background-color: rgb(192,192,192); color: rgb(192,192,192)" class="badge badge-silver">Silver</span>
+                            @endif
+
+                            @if($gift->price >= $rankData['ranks_start'][1] && $gift->price < $rankData['ranks_start'][2])
+                            🥇<span  class="badge badge-warning">Gold</span>
+                            @endif
+
+                            @if($gift->price >= $rankData['ranks_start'][2] && $gift->price <= $rankData['ranks_start'][3])
+                            🥇🥇<span  class="badge badge-light">Platinum</span>
+                            @endif
+
+
                             @if($gift->quantity > 0)
                             
                             @if($gift->quantity < 10)
                             <span class="badge badge-info">Limited Quantity</span>
                             @endif
+                           
+
+                            @if($gift->price < $rankData['current_rank_max'] )
                             <button type="button"
                                 onclick="buygift({{ $gift->id }},'{{ $gift->name }}','{{ $gift->description }}','{{$gift->quantity}}')"
                                 class="btn btn-primary btn-block">view</button>
                             @else
-                            <div class="col text-center">
+                            <button type="button"
+                            disabled
+                            class="btn btn-dark btn-block">&#128274; Locked</button>
+                            @endif
+                            
+                            
+                            
+                            @else
+                            <div class="col-12 text-center">
                                 <div class="alert alert-info">
                                     sold out
                                     <hr>
