@@ -21,8 +21,9 @@
                         <div class="card-header">{{ __('Welcome') }} {{ $user->name }}
                         </div>
                         <div class="card-body">
-                            {{ $rankData['rank'] }}
+                            <img src="/images/ranks/{{$rankData['rank']}}.svg" style="max-height: 80px" alt="">
                             <br>
+                           <h4 style=" font-family: 'Times New Roman', Times, serif;">{{ $rankData['rank'] }}</h4> 
                             {{ __('Your score') }}
                             <div class="alert alert-success">{{ $user->score }}</div>
                             <br>

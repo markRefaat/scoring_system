@@ -21,8 +21,10 @@
                     </div>
 
                     <div class="card-body">
-                        {{ $rankData['rank'] }}
+                        <img src="/images/ranks/{{$rankData['rank']}}.svg" style="max-height: 80px" alt="">
                         <br>
+                       <h4 style=" font-family: 'Times New Roman', Times, serif;">{{ $rankData['rank'] }}</h4> 
+                      
                         {{ __('Your score') }}
                         <div class="alert alert-success">{{ $user->score }}</div>
                         <br>
@@ -59,39 +61,69 @@
     @endif
     <br>
     <div class="container d-flex justify-content-center">
-        <div class="card mb-3" style="width: 70%">
+        <div class="card mb-3">
             <div class="row g-0">
-                <div class="col-md-4">
-                    <img height="100%" src="/mrclock.jpeg" alt="..." class="img-fluid" />
-                </div>
-                <div class="col-md-8">
+                <div class="col-md-12 text-center">
                     <div class="card-body">
+                        {{-- <img style="border-radius: 70px" height="90px" width="90px" src="/mrclock.jpeg" alt="..." class="img-fluid" /> --}}
                         <h5 class="card-title">Mr clock sent you a message</h5>
                         <p class="card-text">
-                            Hello {{ $user->name }} welcome to my gifts store. Here you will find your total score.
-                            remember to visit every week to see your score progress and the gifts prices.
+                            Hello {{ $user->name }} welcome to my gifts store. Here you will find your total score and your level.
+                            remember to visit every week to see your score progress and the unlocked gifts.
                         </p>
-                        <p class="card-text">
-                            but take care gifts prices could change from time to time some could increase <svg
-                                xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-graph-up" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z" />
-                            </svg> and others decrease <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                fill="currentColor" class="bi bi-graph-down" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M0 0h1v15h15v1H0V0zm10 11.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-1 0v2.6l-3.613-4.417a.5.5 0 0 0-.74-.037L7.06 8.233 3.404 3.206a.5.5 0 0 0-.808.588l4 5.5a.5.5 0 0 0 .758.06l2.609-2.61L13.445 11H10.5a.5.5 0 0 0-.5.5z" />
-                            </svg>
-                        </p>
+                        <h4 class="text-center text-muted">Levels</h4>
+                        <div class="row">
+                            <div class="col-3">
+                      
+                                    <img style="max-height: 100px" src="/images/ranks/Bronze I.svg" alt="">
+                                    <p class="text-center" style=" font-size:10px; font-family: 'Times New Roman', Times, serif;">BRONZE I</p> 
+                                
+                             
+                                    <img style="max-height: 100px" src="/images/ranks/Bronze II.svg" alt="">
+                                    <p class="text-center" style=" font-size:10px; font-family: 'Times New Roman', Times, serif;">BRONZE II</p> 
+                               
+                            </div>
+
+                            <div class="col-3">
+                              
+                                    <img style="max-height: 100px" src="/images/ranks/Silver I.svg" alt="">
+                                    <p class="text-center" style=" font-size:10px; font-family: 'Times New Roman', Times, serif;">SILVER I</p> 
+                               
+                            
+                                    <img style="max-height: 100px" src="/images/ranks/Silver II.svg" alt="">
+                                    <p class="text-center" style=" font-size:10px; font-family: 'Times New Roman', Times, serif;">SILVER II</p> 
+                          
+                            </div>
+
+                            <div class="col-3">
+                           
+                                    <img style="max-height: 100px" src="/images/ranks/Gold I.svg" alt="">
+                                    <p class="text-center" style=" font-size:10px; font-family: 'Times New Roman', Times, serif;">GOLD I</p> 
+                             
+                      
+                                    <img style="max-height: 100px" src="/images/ranks/Gold II.svg" alt="">
+                                    <p class="text-center" style=" font-size:10px; font-family: 'Times New Roman', Times, serif;">GOLD II</p> 
+                             
+                            </div>
+
+                            <div class="col-3">
+                          
+                                    <img style="max-height: 100px" src="/images/ranks/Platinium I.svg" alt="">
+                                    <p class="text-center" style=" font-size:10px; font-family: 'Times New Roman', Times, serif;">PLATINIUM I</p> 
+                          
+                       
+                                    <img style="max-height: 100px" src="/images/ranks/Platinium II.svg" alt="">
+                                    <p class="text-center" style=" font-size:10px; font-family: 'Times New Roman', Times, serif;">PLATINIUM II</p> 
+                            
+                            </div>
+                        </div>
                         <hr>
-                        <p dir="rtl" style="text-align: right" class="card-text">
-                            اهلا يا {{ $user->name }} فى موقع الهدايا بتاعى هنا هتلاقى السكور بتاعك وصل لحد فين. بس افتكر
-                            تدخل كل اسبوع علشان تشوف الجديد فى السكور و الهدايا
-                        </p>
-                        <p dir="rtl" style="text-align: right" class="card-text">
-                            بس خد بالك اسعار الهدايا ممكن تختلف من وقت للتانى. ساعات ممكن هدايا تزيد وهدايا ثانية تقل
+                        <p dir="rtl" style="text-align: center" class="card-text">
+                            اهلا يا {{ $user->name }} فى موقع الهدايا بتاعى هنا هتلاقى السكور بتاعك وصل لحد فين وتشوف الهدايا اللى المستوى اللى وصلت له بيفتحها. بس افتكر
+                            تدخل كل اسبوع علشان تشوف السكور بتاعك وصل لحد فين
                         </p>
                     </div>
+                   
                 </div>
             </div>
         </div>
@@ -141,6 +173,14 @@
         </div>
 
     </div>
+    <footer style="margin-top: 1%" class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <div>Icons made by <a href="https://www.flaticon.com/authors/dimitry-miroliubov" title="Dimitry Miroliubov">Dimitry Miroliubov</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+          <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
     {{-- <div class="container">
                   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <div class="alert alert-dark text-center">
