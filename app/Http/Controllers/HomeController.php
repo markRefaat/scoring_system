@@ -71,11 +71,11 @@ class HomeController extends Controller
 
     private function Rankinfo($score)
     {
-        $max_score = 10000;
+        $max_score = 10001;
         $bronze = 2500;
         $silver = 5000;
         $gold = 8500;
-        $plat = 10000;
+        $plat = 10001;
         $percentage = ($score / $max_score) * 100;
         $Current_rank = '';
         $next_rank = '';
