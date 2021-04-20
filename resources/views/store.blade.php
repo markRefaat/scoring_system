@@ -49,12 +49,12 @@
                 </li>
 
                 <li class="nav-item" style="padding: 1%" role="presentation">
-                    <a class="nav-link active purple" href="/products/chocolates" role="tab"
-                        aria-selected="false">Chocolates</a>
+                    <a class="nav-link active purple" href="/products/church" role="tab"
+                        aria-selected="false">روحى</a>
                 </li>
                 <li class="nav-item" style="padding: 1%" role="presentation">
                     <a class="nav-link active cyan" data-mdb-toggle="pill" href="/products/games" role="tab"
-                        aria-selected="false">Games and toys</a>
+                        aria-selected="false">Games and others</a>
                 </li>
                 <li class="nav-item" style="padding: 1%" role="presentation">
                     <a class="nav-link active" id="ex2-tab-3" data-mdb-toggle="pill" href="/products/electronics" role="tab"

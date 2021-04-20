@@ -59,8 +59,8 @@ class HomeController extends Controller
             $category = 'games';
         else if ($category == 'electronics')
             $category = 'electronics';
-        else if ($category == 'chocolates')
-            $category = 'Chocolates';
+        else if ($category == 'church')
+            $category = 'spiritual';
         else if ($category == 'sports')
             $category = 'sports';
         else  return redirect('home')->with('error', 'حدث خطأ ما');

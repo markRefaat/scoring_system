@@ -50,12 +50,13 @@
                 <h4 class="alert-heading">Welcome to Mr.clock's gift store!</h4>
                 <p>hello {{ $user->name }} welcome, because you logged in for the first time mr.clock has given you a
                     <span style="font-size: 30px; font-weight: bold"> 50 </span> momento bonus &#128516; &#129321; &#129321;
-                    !! Now check the gifts categories below and find what you like.
+                    !! Now check the gifts categories below and find what you like. <span style="font-size: 30px; font-weight: bold"> Your score will be updated next Saturnday </span>
                 </p>
                 <hr>
                 <p class="mb-0">اهلا يا {{ $user->name }} علشان انت دخلت الويب سايت مستر كلوك مديلك هدية <span
                         style="font-size: 30px; font-weight: bold"> 50 </span> .مومينتو بونص &#128516; &#129321; &#129321;
                     يلا انزل تحت واتفرج على الهدايا وشوف ايه اللى عجبك </p>
+                    <span style="font-size: 30px; font-weight: bold"> السكور بتاعك هيتجدد السبت القادم </span>
             </div>
         </div>
     @endif
@@ -133,11 +134,11 @@
         <h2 class="alert alert-info"> Categories</h2>
         <div class="row justify-content-around">
             <div class="col-lg-3 mol-md-10">
-                <div style="width: 99% margin-top:2%" onclick="location.href='/products/chocolates'" class="card"
+                <div style="width: 99% margin-top:2%" onclick="location.href='/products/church'" class="card"
                     style="width: 18rem; margin-bottom: 2%">
-                    <img class="card-img-top" height="200px" src="/categories/chocolates.jpg" alt="Card image cap">
+                    <img class="card-img-top" height="200px" src="/categories/church.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text">chocolates</p>
+                        <p class="card-text">روحى</p>
                     </div>
                 </div>
 
@@ -147,7 +148,7 @@
                     style="width: 18rem; margin-bottom: 2%">
                     <img class="card-img-top" height="200px" src="/categories/games.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text">Games</p>
+                        <p class="card-text">Games and others</p>
                     </div>
                 </div>
             </div>
