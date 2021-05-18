@@ -51,6 +51,9 @@
  
 </div>
 <style>
+  #bfee5df0a230e659ce5819cf0b480a56_0{
+    max-width: 100%;
+  }
     .welcome{
         padding: 10px;
         margin-top: 2%;
