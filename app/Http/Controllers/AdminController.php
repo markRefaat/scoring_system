@@ -60,18 +60,20 @@ class AdminController extends Controller
 
         $file = $request->file('sheet');
         $csv = Reader::createFromFileObject($file->openFile());
-        $stmt = Statement::create()->offset(1)->limit(470);
+        $stmt = Statement::create()->offset(1)->limit(950);
         $records = $stmt->process($csv);
 
         foreach ($records as $record) {
-            if ($record[4] != 0) //1
+            if ($record[1] != 0) //1
             {
-                $user = User::firstWhere('username', $record[2]); //0
-                if ($user->staticScore != $record[4]) //1
+                $user = User::firstWhere('username', $record[0]); //0
+                if($user == null)
+                dd($record[0]); 
+                if ($user->staticScore != $record[1]) //1
                 {
-                    $newscore = $record[4] - $user->staticScore;
+                    $newscore = $record[1] - $user->staticScore;
                     $user->score += $newscore;
-                    $user->staticScore = $record[4]; //1 
+                    $user->staticScore = $record[1]; //1 
                     $user->save();
                 }
             }
