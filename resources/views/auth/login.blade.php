@@ -9,7 +9,18 @@
 
                 <div class="card-body">
 
+                    @php
+                    $date = \Carbon\Carbon::create(2021, 5, 22, 21, 0, 0,"Africa/Cairo");
+                    @endphp
+                    @if(\Carbon\Carbon::now("Africa/Cairo")->lessThan($date))
 
+                    <div class="alert alert-info text-center">
+                        The webiste will open at 9 PM 
+                        <hr>
+                        الويب سايت هيفتح الساعة 9 مساء
+                    </div>
+
+                    @else 
                       <form method="POST" action="{{ route('login') }}">
                     @csrf
 
@@ -58,7 +69,7 @@
                         </div>
                     </div>
                     </form>
-                    
+                    @endif
                 </div>
             </div>
         </div>
