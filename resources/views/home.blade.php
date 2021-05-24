@@ -40,7 +40,11 @@
             </div>
 
         </div>
+
     </div>
+
+    
+
     @if ($welcome)
         <div style="margin-top: 2%" class="container text-center">
             <div class="alert alert-success text-center" role="alert">

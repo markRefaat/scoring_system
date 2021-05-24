@@ -24,7 +24,7 @@ Route::get('/', function () {
 //     return view('score', compact('users'));
 // });
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => false]);    
 //COMMENT THIS TO CLOSE THE WEBSITE
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/store', 'HomeController@showStore')->middleware('auth');
@@ -32,6 +32,7 @@ Route::get('/products/{name}', 'HomeController@showProducts')->middleware('auth'
 Route::get('/products', 'HomeController@index')->middleware('auth');
 Route::post('/redeem', 'UserController@redeem')->middleware('auth');
 Route::get('/myGifts', 'UserController@myGifts')->middleware('auth');
+Route::get('/scoreBoard', 'UserController@ranking')->middleware('auth');
 Route::get('/adminHome', 'AdminController@index')->name('adminhome')->middleware(['auth','admin']);
 Route::post('/updateScore', 'AdminController@updateScore')->middleware(['auth','admin']);
 Route::post('/updateSettings', 'AdminController@updateSettings')->middleware(['auth','admin']);

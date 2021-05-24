@@ -82,4 +82,26 @@ class UserController extends Controller
             }
         } else return redirect()->back()->with('error', 'لا يمكنك ارجاع الهدية الآن');
     }
+
+
+
+    public function ranking(){ 
+        $users = User::where('class','!=','admins')->where('staticScore','>','0')->orderBy('class','ASC')->select('class','staticScore')->get();
+
+        $grouped = $users->mapToGroups(function ($item, $key) {
+            return [$item['class'] => $item['staticScore']];
+        });
+ 
+        $groupedSum = $grouped->map(function ($item, $key) {
+            return $item->sum() / count($item);
+        });
+        $top_five = $groupedSum->sort()->reverse()->slice(0,5);
+       
+        $score_bigger = User::where("StaticScore",'>',auth()->user()->staticScore)->orderBy('StaticScore','ASC')->select('name','class','staticScore')->limit(3)->get();
+        $score_smaller = User::where("StaticScore",'<',auth()->user()->staticScore)->orderBy('StaticScore','DESC')->select('name','class','staticScore')->limit(3)->get();
+        $score_bigger = $score_bigger->reverse();
+       
+        return view('scoringBoard',compact('top_five','score_bigger','score_smaller'));
+    }
+
 }
