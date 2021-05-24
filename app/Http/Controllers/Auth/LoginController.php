@@ -45,10 +45,6 @@ class LoginController extends Controller
     }
 
     public function authenticated(Request $request, $user) {
-        if($user->visited_at == null){
-            $user->staticScore +=50;
-            $user->score+=50; 
-        }
         $user->visited_at = Carbon::now()->toDateTimeString();
         $user->save();
     }
